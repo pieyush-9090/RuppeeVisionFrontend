@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RupeeVision - Currency Exchange Rate Prediction</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-rupee-sign"></i>
+                <span>RupeeVision</span>
+            </div>
+            <div id="live-clock"></div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="hero">
+            <div class="hero-content">
+                <h1>Predict Currency Exchange Rates with AI</h1>
+                <p>RupeeVision uses advanced AI algorithms to forecast currency exchange rates, helping you make informed financial decisions.</p>
+                <div class="input-group">
+                    <input type="number" id="days" placeholder="Enter number of days (1-30)" min="1" max="30">
+                    <button onclick="predictRates()">Predict</button>
+                </div>
+                <div class="prediction-buttons">
+                    <button onclick="predictDays(7)">7 Days</button>
+                    <button onclick="predictDays(14)">14 Days</button>
+                    <button onclick="predictDays(30)">30 Days</button>
+                </div>
+                <div id="loader" class="loader"></div>
+            </div>
+            <div class="hero-image">
+                <img src="label.jpg" alt="Currency exchange visualization">
+            </div>
+        </div>
+        <div class="dashboard-item prediction-results" id="prediction-results" style="display: none;">
+            <h2>Currency Rate Prediction</h2>
+            <div id="prediction-content">
+                <table id="resultTable">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>USD</th>
+                            <th>EUR</th>
+                            <th>JPY</th>
+                            <th>GBP</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <div class="chart-container">
+                    <canvas id="rateChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- Initial visible sections -->
+        <div class="dashboard-grid">
+            <!-- Current Rates Section -->
+            <div class="dashboard-item">
+                <h2>Current Rates</h2>
+                <div id="current-rates" class="currency-cards">
+                    <div class="loader" id="rates-loader"></div>
+                    <!-- Current rates will be populated here -->
+                </div>
+            </div>
+            
+            <!-- Market Insights Section -->
+            <div class="dashboard-item">
+                <h2>Market Insights</h2>
+                <ul class="insights-list" id="market-insights">
+                    <!-- Market insights will be populated here -->
+                </ul>
+            </div>
+            
+            <!-- Prediction Results (initially hidden) -->
+        
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About RupeeVision</h3>
+                <p>RupeeVision uses advanced AI algorithms to forecast currency exchange rates, helping you make informed financial decisions.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 RupeeVision. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
