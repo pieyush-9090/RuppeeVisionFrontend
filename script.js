@@ -23,7 +23,7 @@ async function predictRates() {
         // Simulate API call delay
         await new Promise(resolve => setTimeout(resolve, 1500));
         
-        const response = await fetch("http://127.0.0.1:5000/predict", {
+        const response = await fetch("rupeevision-production.up.railway.app/predict", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ days: parseInt(days) }),
